@@ -2,6 +2,8 @@
 
 Convert [Grype](https://github.com/anchore/grype) vulnerability scan results into interactive HTML reports.
 
+![Screenshot of browser displaying report](./grype_report_screenshot.png)
+
 ## Features
 
 * Generate standalone HTML reports from Grype JSON output
