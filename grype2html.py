@@ -4,7 +4,7 @@ import sys
 from datetime import datetime
 import html
 
-HTML_TEMPLATE = '''<!DOCTYPE html>
+HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -238,7 +238,8 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     </script>
 </body>
 </html>
-'''
+"""
+
 
 def main():
     # Read JSON from stdin
@@ -256,17 +257,18 @@ def main():
     report = HTML_TEMPLATE.format(
         timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         json_data=json.dumps(grype_data),
-        grype_version=grype_data['descriptor']['version']
+        grype_version=grype_data["descriptor"]["version"],
     )
 
     # Write the report to file
     try:
-        with open(filename, 'w') as f:
+        with open(filename, "w") as f:
             f.write(report)
         print(f"Report generated: {filename}")
     except IOError as e:
         print(f"Error writing report: {e}", file=sys.stderr)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
